@@ -93,7 +93,7 @@ import { SITE_TITLE, SITE_DESCRIPTION } from '../../consts';
       description: document.querySelector('#description').value,
       source_url: document.querySelector('#source_url').value,
       thumbnail_url: document.querySelector('#thumbnail_url').value,
-      published_at: publishedValue ? publishedValue.replace('T', ' ') + (publishedValue.length === 16 ? ':00' : '') : '',
+      published_at: publishedValue, // Keep the native datetime-local ISO value (YYYY-MM-DDTHH:mm).
     };
     if (id) item.id = Number(id);
     try {
